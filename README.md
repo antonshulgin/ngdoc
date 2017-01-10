@@ -5,7 +5,7 @@ Basic IRC Bot that links stuff from [docs.angularjs.org](https://docs.angularjs.
 ## Usage
 
 ```shell
-$perl init.pl <server> <port> <nickname> \"<#channel1,#channel2,#etc>\"
+$perl init.pl <server> <port> <nickname> "<#channel1,#channel2,#etc>"
 ```
 
 Once the bot joins a channel, the lookup feature is available by mentioning its nickname, as in:
