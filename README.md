@@ -1,6 +1,6 @@
 # NgDoc
 
-Basic IRC Bot that links stuff from [docs.angularjs.org](https://docs.angularjs.org).
+Basic IRC bot that links stuff from [docs.angularjs.org](https://docs.angularjs.org).
 
 ## Usage
 
