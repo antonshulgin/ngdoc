@@ -17,7 +17,7 @@ BEGIN {
 sub lookup {
 	my $search_term = shift;
 	$search_term = format_search_term($search_term);
-	if (!defined $search_term) {
+	if (!defined($search_term)) {
 		return;
 	};
 	if (length($search_term) < 3) {
@@ -25,7 +25,7 @@ sub lookup {
 	}
 	print("looking up '$search_term'...\n");
 	my $content = get(INDEX_URL);
-	if (!defined $content) {
+	if (!defined($content)) {
 		return 'Returned empty request, try again later';
 	}
 	my @entries = get_entries(trim_whitespaces($content));
@@ -74,7 +74,7 @@ sub get_results {
 
 sub get_entries {
 	my $content = shift;
-	my @entries = ($content =~ m/\{\s*([^\}]+)\s*\}/g);
+	my @entries = ($content =~ /\{\s*([^\}]+)\s*\}/g);
 	return parse_entries(@entries);
 }
 

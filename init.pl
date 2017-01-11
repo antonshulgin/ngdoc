@@ -12,7 +12,6 @@ sub init {
 	if (scalar(@_) < 4) {
 		die("Usage: $0 <server> <port> <nickname> \"<#channel1,#channel2,#etc>\"\n");
 	}
-	my @params = @_;
 	my $server = shift;
 	my $port = shift;
 	my $nickname = shift;
@@ -54,7 +53,7 @@ sub dispatch {
 			$message =~ s/^\s*|\s*$//;
 			print "*** message from $sender: $message\n";
 			$response = NgDoc::lookup($message);
-			if (defined $response) {
+			if (defined($response)) {
 				print $socket "PRIVMSG $sender :$response\n";
 			}
 		}
