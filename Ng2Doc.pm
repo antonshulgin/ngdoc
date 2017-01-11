@@ -1,4 +1,4 @@
-package NgDoc;
+package Ng2Doc;
 
 use strict;
 use warnings;
@@ -7,8 +7,8 @@ use LWP::Simple;
 
 use Util;
 
-use constant HOST_URL => 'https://docs.angularjs.org';
-use constant INDEX_URL => HOST_URL . '/js/search-data.json';
+use constant HOST_URL => 'https://angular.io/docs/ts/latest/api';
+use constant INDEX_URL => HOST_URL . '/api-list.json';
 
 sub lookup {
 	my $term = shift;
@@ -59,7 +59,7 @@ sub parse_entries {
 sub parse_entry {
 	my $raw_entry = shift;
 	my %entry = (
-		title => ($raw_entry =~ /"titleWords"\:\s*"([^"]+)"/i),
+		title => ($raw_entry =~ /"title"\:\s*"([^"]+)"/i),
 		path => ($raw_entry =~ /"path"\:\s*"([^"]+)"/i),
 	);
 	return \%entry;

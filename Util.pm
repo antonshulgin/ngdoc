@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 sub format_results {
+	my $prefix = pop;
 	my @results = @_;
 	my @output = ();
 	my $title;
@@ -13,7 +14,7 @@ sub format_results {
 	}
 	for (my $idx = 0; $idx < scalar(@results); $idx += 1) {
 		$title = $results[$idx]->{title};
-		$url = produce_url($results[$idx]->{path});
+		$url = produce_url($results[$idx]->{path}, $prefix);
 		push(@output, "[$idx] $title: $url");
 	}
 	return join(' :: ', @output);

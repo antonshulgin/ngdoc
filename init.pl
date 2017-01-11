@@ -5,6 +5,7 @@ use warnings;
 
 use IO::Socket;
 use NgDoc;
+use Ng2Doc;
 
 init(@ARGV);
 
