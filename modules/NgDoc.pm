@@ -7,6 +7,7 @@ use LWP::Simple;
 
 use Util;
 
+use constant TAG => 'NgDoc';
 use constant HOST_URL => 'https://docs.angularjs.org';
 use constant INDEX_URL => HOST_URL . '/js/search-data.json';
 
@@ -17,16 +18,21 @@ sub lookup {
 		return;
 	};
 	if (length($term) < 3) {
-		return 'Give me more letters';
+		return produce_tagged_message('Give me more letters');
 	}
-	print("looking up '$term'...\n");
+	print(produce_tagged_message("looking up '$term'..."));
 	my $content = LWP::Simple::get(INDEX_URL);
 	if (!defined($content)) {
-		return 'Returned empty request, try again later';
+		return produce_tagged_message('Returned empty request, try again later');
 	}
 	my @entries = extract_entries(Util::trim_whitespaces($content));
 	my @results = extract_results($term, @entries);
-	return Util::format_results(@results, HOST_URL);
+	return produce_tagged_message(Util::format_results(@results, HOST_URL));
+}
+
+sub produce_tagged_message {
+	my $message = shift;
+	return TAG . ": $message\n";
 }
 
 sub extract_results {
