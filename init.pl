@@ -4,8 +4,8 @@ use strict;
 use warnings;
 
 use IO::Socket;
-use NgDoc;
-use Ng2Doc;
+use modules::NgDoc;
+use modules::Ng2Doc;
 
 init(@ARGV);
 
