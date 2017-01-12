@@ -1,6 +1,6 @@
 # NgDoc
 
-Basic IRC bot that links stuff from [docs.angularjs.org](https://docs.angularjs.org).
+Basic IRC bot that links stuff from Angular JS API documentation.
 
 ## Usage
 
@@ -11,7 +11,7 @@ $perl init.pl <server> <port> <nickname> "<#channel1,#channel2,#etc>"
 Once the bot joins a channel, the lookup feature is available by mentioning its nickname, as in:
 
 ```
-<nickname> <search term>
+<nickname> [angular version number] <search term>
 ```
 
 ## Dependencies
