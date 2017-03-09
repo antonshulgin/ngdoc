@@ -1,4 +1,4 @@
-# NgDoc
+# ngdoc
 
 Basic IRC bot that links stuff from Angular JS API documentation.
 
