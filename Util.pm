@@ -17,7 +17,7 @@ sub format_results {
 		$url = produce_url($results[$idx]->{path}, $prefix);
 		push(@output, "[$idx] $title: $url");
 	}
-	return join(' :: ', @output);
+	return join(' :: ', sort(@output));
 }
 
 sub produce_url {
